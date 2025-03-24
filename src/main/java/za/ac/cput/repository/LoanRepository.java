@@ -4,7 +4,10 @@ import za.ac.cput.domain.Loan;
 import java.util.*;
 
 /**
- * @author - Justin Angelo Karoles 222008237
+ * LoanRepository.java
+ * Repository class for Loan entity
+ * Author: Justin Angelo Karoles (222008237)
+ * Date: 23 March 2025
  */
 
 public class LoanRepository implements ILoanRepository {

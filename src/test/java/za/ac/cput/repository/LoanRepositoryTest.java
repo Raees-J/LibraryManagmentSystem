@@ -6,9 +6,14 @@ import za.ac.cput.factory.LoanFactory;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
+
 /**
- * @author - Justin Angelo Karoles 222008237
- */
+ * LoanRepositoryTest.java
+ * Test class for the LoanRepository
+ * Author: Justin Angelo Karoles (222008237)
+ * Date: 23 March 2025
+ * */
+
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LoanRepositoryTest {

@@ -3,7 +3,10 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Loan;
 
 /**
- * @author - Justin Angelo Karoles 222008237
+ * LoanFactory.java
+ * Loan class for creating Loan objects
+ * Author: Justin Angelo Karoles (222008237)
+ * Date: 23 March 2025
  */
 
 public class LoanFactory {

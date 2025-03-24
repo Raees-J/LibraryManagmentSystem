@@ -5,7 +5,10 @@ import za.ac.cput.domain.Loan;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author - Justin Angelo Karoles 222008237
+ * LoanFactoryTest.java
+ * Test class for the LoanFactory
+ * Author: Justin Angelo Karoles (222008237)
+ * Date: 23 March 2025
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -40,7 +43,9 @@ public class LoanFactoryTest {
     @Order(3)
     public void testCreateLoan_InvalidLoan() {
         assertThrows(IllegalArgumentException.class, () -> {
-            LoanFactory.createLoan("L003", -1000, -5.5, 12);  // This should throw an exception due to invalid parameters
+            LoanFactory.createLoan("L003", -5000, -5.5, 12);  // This should throw an exception due to invalid parameters
         });
+
+
     }
 }

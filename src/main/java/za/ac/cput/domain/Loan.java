@@ -3,7 +3,10 @@ package za.ac.cput.domain;
 import java.util.Objects;
 
 /**
- * @author - Justin Angelo Karoles 222008237
+ * Loan.java
+ * Domain class for Loan
+ * Author: Justin Angelo Karoles (222008237)
+ * Date: 23 March 2025
  */
 
 public class Loan {
