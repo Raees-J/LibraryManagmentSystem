@@ -6,7 +6,7 @@ import java.util.Objects;
  * Loan.java
  * Domain class for Loan
  * Author: Justin Angelo Karoles (222008237)
- * Date: 23 March 2025
+ * Date: 15 March 2025
  */
 
 public class Loan {
@@ -46,10 +46,6 @@ public class Loan {
         return Objects.equals(loanId, loan.loanId);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(loanId);
-    }
 
     @Override
     public String toString() {
@@ -94,5 +90,7 @@ public class Loan {
             }
             return new Loan(this);
         }
+
+
     }
 }
