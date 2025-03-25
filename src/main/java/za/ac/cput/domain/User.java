@@ -85,8 +85,7 @@ public class User {
             return this;
         }
 
-        public User build() {
-            return new User(this);
+        public User build() {return new User(this);
         }
     }
 }
