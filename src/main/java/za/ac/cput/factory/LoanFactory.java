@@ -1,30 +1,35 @@
 package za.ac.cput.factory;
 
-import za.ac.cput.domain.Loan;
+import za.ac.cput.domain.BookLoan;
 import za.ac.cput.util.Helper;
+import java.time.LocalDate;
 
 /**
  * LoanFactory.java
- * Loan class for creating Loan objects
+ * Factory class for creating Loan objects in a Library Management System
  * Author: Justin Angelo Karoles (222008237)
  * Date: 17 March 2025
  */
 
 public class LoanFactory {
-    public static Loan createLoan(String loanId, double amount, double interestRate, int termInMonths) {
-        if (isInvalidLoan(loanId, amount, interestRate, termInMonths)) {
+    public static BookLoan createLoan(String loanId, String bookId, String memberId, LocalDate loanDate, LocalDate returnDate, boolean isReturned) {
+        if (isInvalidLoan(loanId, bookId, memberId, loanDate)) {
             return null;
         }
 
-        return new Loan.Builder()
+        return new BookLoan.Builder()
                 .setLoanId(loanId)
-                .setAmount(amount)
-                .setInterestRate(interestRate)
-                .setTermInMonths(termInMonths)
+                .setBookId(bookId)
+                .setMemberId(memberId)
+                .setLoanDate(loanDate)
+                .setReturnDate(returnDate)
+                .setReturned(isReturned)
                 .build();
     }
 
-    private static boolean isInvalidLoan(String loanId, double amount, double interestRate, int termInMonths) {
-        return Helper.isNullOrEmpty(loanId) || amount <= 0 || interestRate <= 0 || termInMonths <= 0;
+    private static boolean isInvalidLoan(String loanId, String bookId, String memberId, LocalDate loanDate) {
+        return Helper.isNullOrEmpty(loanId) || Helper.isNullOrEmpty(bookId) || Helper.isNullOrEmpty(memberId) || loanDate == null;
     }
 }
+
+
