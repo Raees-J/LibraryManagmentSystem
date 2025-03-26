@@ -1,3 +1,9 @@
+/*
+UserFactoryTest.java
+User model class
+Author: Raees Johaadien (230558135)
+Date: 14 March 2025
+*/
 package za.ac.cput.factory;
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.User;
