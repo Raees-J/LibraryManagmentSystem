@@ -11,7 +11,7 @@ import java.util.List;
  * LoanRepositoryTest.java
  * Test class for the LoanRepository
  * Author: Justin Angelo Karoles (222008237)
- * Date: 23 March 2025
+ * Date: 25 March 2025
  * */
 
 
@@ -22,14 +22,14 @@ public class LoanRepositoryTest {
 
     @BeforeAll
     public static void setUp() {
-        loanRepository = LoanRepository.getRepository(); // ✅ Correct singleton access
+        loanRepository = LoanRepository.getRepository();
         loan1 = LoanFactory.createLoan("L001", 10000, 5.5, 12);
         loan2 = LoanFactory.createLoan("L002", 5000, 6.0, 24);
     }
 
     @BeforeEach
     public void resetRepository() {
-        loanRepository.getAll().forEach(loan -> loanRepository.delete(loan.getLoanId())); // ✅ Clears repo before each test
+        loanRepository.getAll().forEach(loan -> loanRepository.delete(loan.getLoanId()));
     }
 
     @Test
@@ -71,7 +71,7 @@ public class LoanRepositoryTest {
 
         Loan fetchedLoan = loanRepository.read("L001");
         assertEquals(12000, fetchedLoan.getAmount());
-        assertEquals(5.0, fetchedLoan.getInterestRate(), 0.01); //  Floating-point comparison fix
+        assertEquals(5.0, fetchedLoan.getInterestRate(), 0.01);
         assertEquals(18, fetchedLoan.getTermInMonths());
     }
 
@@ -101,7 +101,7 @@ public class LoanRepositoryTest {
         List<Loan> loans = loanRepository.getAll();
         System.out.println("All Loans: " + loans);
 
-        assertEquals(2, loans.size()); //  Corrected assertion
+        assertEquals(2, loans.size());
         assertTrue(loans.contains(loan1));
         assertTrue(loans.contains(loan2));
     }

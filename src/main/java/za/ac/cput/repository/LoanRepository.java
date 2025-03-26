@@ -14,12 +14,12 @@ public class LoanRepository implements ILoanRepository {
     private static LoanRepository repository = null;
     private Map<String, Loan> loanMap;
 
-    // Private constructor for singleton
+
     private LoanRepository() {
         loanMap = new HashMap<>();
     }
 
-    // Static method to get the single instance of LoanRepository
+
     public static LoanRepository getRepository() {
         if (repository == null) {
             repository = new LoanRepository();
