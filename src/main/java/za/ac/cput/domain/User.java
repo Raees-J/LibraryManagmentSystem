@@ -1,3 +1,9 @@
+/*
+User.java
+User model class
+Author: Raees Johaadien (230558135)
+Date: 14 March 2025
+*/
 package za.ac.cput.domain;
 
 public class User {
