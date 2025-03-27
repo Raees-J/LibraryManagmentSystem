@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * Date: 17 March 2025
  */
 
-public class LoanFactory {
+public class BookLoanFactory {
     public static BookLoan createLoan(String loanId, String bookId, String memberId, LocalDate loanDate, LocalDate returnDate, boolean isReturned) {
         if (isInvalidLoan(loanId, bookId, memberId, loanDate)) {
             return null;

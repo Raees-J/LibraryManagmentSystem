@@ -2,7 +2,7 @@ package za.ac.cput.repository;
 
 import org.junit.jupiter.api.*;
 import za.ac.cput.domain.BookLoan;
-import za.ac.cput.factory.LoanFactory;
+import za.ac.cput.factory.BookLoanFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
@@ -24,10 +24,10 @@ public class BookLoanRepositoryTest {
     public static void setUp() {
         bookLoanRepository = BookLoanRepository.getRepository();
 
-        bookLoan1 = LoanFactory.createLoan("L01", "B01", "M01",
+        bookLoan1 = BookLoanFactory.createLoan("L01", "B01", "M01",
                 LocalDate.of(2025, 9, 20), LocalDate.of(2025, 3, 15), false);
 
-        bookLoan2 = LoanFactory.createLoan("L02", "B02", "M02",
+        bookLoan2 = BookLoanFactory.createLoan("L02", "B02", "M02",
                 LocalDate.of(2025, 3, 5), LocalDate.of(2025, 3, 20), false);
     }
 
@@ -69,7 +69,7 @@ public class BookLoanRepositoryTest {
         bookLoanRepository.create(bookLoan1);
         System.out.println("Before update: " + bookLoanRepository.read("L01"));
 
-        BookLoan updatedBookLoan = LoanFactory.createLoan("L01", "B01", "M01",
+        BookLoan updatedBookLoan = BookLoanFactory.createLoan("L01", "B01", "M01",
                 LocalDate.of(2025, 3, 1), LocalDate.of(2025, 3, 18), true);
         BookLoan result = bookLoanRepository.update(updatedBookLoan);
 

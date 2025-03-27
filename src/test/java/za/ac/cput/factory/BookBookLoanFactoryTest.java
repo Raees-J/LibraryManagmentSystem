@@ -13,16 +13,16 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class BookLoanFactoryTest {
+public class BookBookLoanFactoryTest {
     private static BookLoan bookLoan1;
     private static BookLoan bookLoan2;
     private static BookLoan bookLoan3;
 
     @BeforeAll
     public static void setUp() {
-        bookLoan1 = LoanFactory.createLoan("L01", "B01", "M01", LocalDate.of(2025, 5, 5), LocalDate.of(2025, 3, 15), false);
-        bookLoan2 = LoanFactory.createLoan("L02", "B02", "M02", LocalDate.of(2025, 3, 5), LocalDate.of(2025, 3, 20), true);
-        bookLoan3 = LoanFactory.createLoan("", "B03", "M03", null, LocalDate.of(2025, 3, 25), false);
+        bookLoan1 = BookLoanFactory.createLoan("L01", "B01", "M01", LocalDate.of(2025, 5, 5), LocalDate.of(2025, 3, 15), false);
+        bookLoan2 = BookLoanFactory.createLoan("L02", "B02", "M02", LocalDate.of(2025, 3, 5), LocalDate.of(2025, 3, 20), true);
+        bookLoan3 = BookLoanFactory.createLoan("", "B03", "M03", null, LocalDate.of(2025, 3, 25), false);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class BookLoanFactoryTest {
     public void testCreateLoan_InvalidLoan_EmptyLoanId_NullLoanDate() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             // create an invalid loan
-            bookLoan3 = LoanFactory.createLoan("", "B003", "M006", null, LocalDate.of(2025, 3, 25), false);
+            bookLoan3 = BookLoanFactory.createLoan("", "B003", "M006", null, LocalDate.of(2025, 3, 25), false);
         });
         System.out.println("Exception caught: " + exception.getMessage());
         assertEquals("Invalid loan details: loanId, bookId, memberId, or loanDate cannot be null or empty.", exception.getMessage());
