@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class BookBookLoanFactoryTest {
+public class BookLoanFactoryTest {
     private static BookLoan bookLoan1;
     private static BookLoan bookLoan2;
     private static BookLoan bookLoan3;
